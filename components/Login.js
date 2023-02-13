@@ -8,7 +8,7 @@ export default function Login() {
 
     function submitHandler(){
         if (!email || !password) { 
-            setError('Voer uw email and wachtwoord in')
+            setError('Voer uw email en wachtwoord in')
             return 
         }
     }
