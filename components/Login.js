@@ -3,6 +3,11 @@ import React, {useState} from 'react'
 export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [error, setError] = useState(null)
+
+    function submitHandler(){
+        if (!email || !password) { return }
+    }
 
   return (
     <div className='flex-1 text-xs sm:text-sm flex flex-col justify-center items-center gap-2 sm:gap-4'>
