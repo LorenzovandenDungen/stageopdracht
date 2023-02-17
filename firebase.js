@@ -1,19 +1,23 @@
-import { initializeApp } from 'firebase/app';
-import {getAuth} from 'firebase/auth'
-import {getFirestore} from 'firebase/firestore'
-// TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_APIKEY,
-    authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
-    projectId: process.env.NEXT_PUBLIC_PROJECTID,
-    storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
-    appId: process.env.NEXT_PUBLIC_APPID,
-    measurementId: NEXT_PUBLIC_MEASUREMENTID
-};
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth"
+import { getFirestore } from 'firebase/firestore'
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-const app = initializeApp(firebaseConfig);
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyAAX0LwQ5Fs4mw8THIAhGzP_3mrm_-3-MQ",
+    authDomain: "securityawar.firebaseapp.com",
+    projectId: "securityawar",
+    storageBucket: "securityawar.appspot.com",
+    messagingSenderId: "491039581195",
+    appId: "1:491039581195:web:53c6719af3efb61654130e"
+  }
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig)
 
 export const auth = getAuth(app)
 export const db = getFirestore(app)
-
