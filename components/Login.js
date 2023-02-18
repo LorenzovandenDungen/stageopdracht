@@ -1,3 +1,4 @@
+import { useAuth } from '@/context/AuthContext'
 import React, {useState} from 'react'
 
 export default function Login() {
@@ -6,11 +7,23 @@ export default function Login() {
     const [error, setError] = useState(null)
     const [isLoggingIn, setIsLoggingIn] = useState(true)
 
-    function submitHandler(){
+    const { login, signup, currentUser } = useAuth()
+    console.log(currentUser)
+    async function submitHandler(){
         if (!email || !password) { 
             setError('Voer uw email en wachtwoord in')
             return 
         }
+        if (isLoggingIn) {
+          try {
+
+            await login(email, password)
+          } catch (err) {
+            setError('Verkeerde email of wachtwoord')
+          }
+          return 
+        }
+        await signup(email, password)
     }
 
   return (
