@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import Login from '@/components/Login'
 import { useAuth } from '@/context/AuthContext'
 import UserDashboard from '@/components/UserDashboard'
+import AdminLogin from '@/components/AdminLogin'
 
 const inter = Inter({ subsets: ['latin'] })
 
