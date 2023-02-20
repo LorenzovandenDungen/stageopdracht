@@ -1,29 +1,27 @@
-// Admin Login Page
-function loginPage() {
-    let username = prompt('Username?');
-    let password = prompt('Password?');
-    if (username === 'admin' && password === 'password') {
-        // Successfully logged in
-    } else {
-        // Login failed
-    }
-}
+import React, { useState } from 'react';
+import { Link } from '@reach/router';
 
-// Create User
-function createUser() {
-    let name = prompt('Name of user?');
-    let email = prompt('Email of user?');
-    let role = prompt('Role of user (Admin, Employee, Company)?');
+const AdminLoginPage = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-    // Write user data to database
-}
+  return (
+    <div>
+      <p>Please Log In To Access Admin Area</p>
+      <form onSubmit={(e) => e.preventDefault()}>
+        <label>
+          Username:
+          <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} />
+        </label>
+        <label>
+          Password:
+          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label>
+        <button type='submit'>Log In</button>
+      </form>
+      <Link to="/">Go Back To Homepage</Link>
+    </div>
+  );
+};
 
-// Send Invite
-function sendInvite() {
-    let trainingID = prompt('Training ID?');
-    let userIDs = prompt('User IDs to invite (comma separated)?');
-    let expiryTime = prompt('Expiry time for invite?');
-    let message = `You have been invited to complete a training (${trainingID}) before ${expiryTime}.`;
-
-    // Send invite emails with message to users in userIDs
-}
+export default AdminLoginPage;
