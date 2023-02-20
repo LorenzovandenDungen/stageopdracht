@@ -21,6 +21,8 @@ export default function Home() {
       </Head>
       {!currentUser && <Login />}
       {currentUser && <UserDashboard/>}
-      </>
-  )
+      {currentUser && <AdminLogin />}
+    </>
+   )
+   
 }
